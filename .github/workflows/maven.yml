@@ -3,6 +3,10 @@ name: Java Maven Build & publish Artifacts
 on:
   push:
     branches: ["main"]
+  release:
+    types: [published]
+  deployment:
+    types: [created]
 
 jobs:
   build_tests:
