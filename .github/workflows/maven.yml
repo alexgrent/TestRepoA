@@ -22,7 +22,6 @@ jobs:
       - name: Build maven
         run: mvn -B package --file pom.xml
 
-
   publish:
     runs-on: ubuntu-latest
     needs: build_tests
