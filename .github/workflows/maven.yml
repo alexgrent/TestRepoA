@@ -1,0 +1,21 @@
+name: Java Maven Build & publish Artifacts
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build_tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '22'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build maven
+        run: mvn -B package --file pom.xml
+
