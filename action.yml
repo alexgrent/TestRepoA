@@ -1,0 +1,5 @@
+name: Test Project Action
+description: This is a test action
+runs:
+  using: node16
+  main: src/test/java/GreeterTest.java
