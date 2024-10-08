@@ -1,17 +1,19 @@
 package org.example;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class VersionService {
 
-    @Value("${info.app.version}")
-    private String version;
+    @Autowired
+    private Environment environment;
 
     public String getVersion() {
-        return version;
+        String version = environment.getProperty("info.app.version");
+        return version != null ? version : "default-version";
     }
-
 }
