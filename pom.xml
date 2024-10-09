@@ -23,6 +23,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub alexgrent Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/alexgrent/TestProjectA</url>
+        </repository>
+    </distributionManagement>
+
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
